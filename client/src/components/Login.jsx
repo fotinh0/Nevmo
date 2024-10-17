@@ -11,8 +11,31 @@ const Login = ({ setShowSignUp }) => {
     }));
   };
 
-  const handleSubmit = async () => {
-    // TODO: handle login
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.msg);
+        return;
+      }
+
+      // Store token and redirect to dashboard
+      localStorage.setItem('token', data.token);
+      window.location = '/dashboard';
+    } catch (err) {
+      console.error(err);
+      setError('Login failed. Please check your credentials.');
+    }
   };
 
   return (
