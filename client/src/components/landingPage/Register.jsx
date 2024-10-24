@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import InputField from './InputField';
+import CustomButton from './CustomButton';
 
-const Register = ({ setShowSignUp }) => {
+const Register = () => {
   const [userData, setUserData] = useState({
     name: '',
     email: '',
@@ -49,38 +51,38 @@ const Register = ({ setShowSignUp }) => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Sign Up</h2>
-      <form className="form" onSubmit={handleSubmit} method="post">
-        <input
-          name="name"
-          type="text"
-          placeholder="Name"
-          onChange={handleChange}
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
-        <input
-          name="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-        />
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Sign Up</button>
-      </form>
-      <a onClick={() => setShowSignUp(false)}>Login</a>
-    </div>
+    <form
+      className="flex flex-col w-full gap-8 mb-4"
+      onSubmit={handleSubmit}
+      method="post"
+    >
+      <InputField
+        name="name"
+        type="text"
+        placeholder="Enter name"
+        onChange={handleChange}
+      />
+      <InputField
+        name="email"
+        type="email"
+        placeholder="Enter email"
+        onChange={handleChange}
+      />
+      <InputField
+        name="password"
+        type="password"
+        placeholder="Enter password"
+        onChange={handleChange}
+      />
+      <InputField
+        name="confirmPassword"
+        type="password"
+        placeholder="Confirm Password"
+        onChange={handleChange}
+      />
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <CustomButton label="Sign up" type="primary" />
+    </form>
   );
 };
 

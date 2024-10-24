@@ -1,0 +1,14 @@
+import { useState } from 'react';
+import './styles/landingPageForms.css';
+import FormContainer from './FormContainer';
+
+const LandingPage = () => {
+  const [showSignUp, setShowSignUp] = useState(false);
+  return (
+    <>
+      <FormContainer showSignUp={showSignUp} setShowSignUp={setShowSignUp} />
+    </>
+  );
+};
+
+export default LandingPage;
