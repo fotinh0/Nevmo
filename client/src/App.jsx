@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/dashboard/*" element={<Dashboard />}>
-          <Route path="home" element={<DashboardHome />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<DashboardHome />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="accounts" element={<ManageAccounts />} />
         </Route>

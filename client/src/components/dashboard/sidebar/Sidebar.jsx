@@ -34,7 +34,7 @@ const Sidebar = () => {
           />
         </div>
         <nav className="flex flex-col p-5 space-y-4">
-          <Link to="/dashboard/home" className="hover:text-sky-blue">
+          <Link to="/dashboard" className="hover:text-sky-blue">
             Dashboard
           </Link>
           <Link to="/dashboard/accounts" className="hover:text-sky-blue">
@@ -43,9 +43,15 @@ const Sidebar = () => {
           <Link to="/dashboard/transactions" className="hover:text-sky-blue">
             Transactions
           </Link>
-          <Link to="/logout" className="hover:text-sky-blue">
+          <a
+            className="hover:text-sky-blue"
+            onClick={() => {
+              localStorage.removeItem('token');
+              window.location = '/';
+            }}
+          >
             Log out
-          </Link>
+          </a>
         </nav>
       </aside>
     </>
