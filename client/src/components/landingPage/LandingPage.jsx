@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './styles/landingPageForms.css';
 import FormContainer from './FormContainer';
 
 const LandingPage = () => {
