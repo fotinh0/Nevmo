@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Sidebar from './sidebar/Sidebar';
+import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
-  const [balance, setBalance] = useState(0);
-
-  //TODO:
-  // Fetch account data / transaction
-  // Deposit/withdraw money
-  // Transfer money
-
   return (
-    <div>
-      <h2>Your Balance: ${balance}</h2>
+    <div className="flex h-screen">
+      <Sidebar />
+
+      <main className="flex-1 px-10 py-20">
+        <Outlet />
+      </main>
     </div>
   );
 };
