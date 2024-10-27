@@ -26,14 +26,19 @@ const Sidebar = () => {
                         : '-translate-x-full lg:translate-x-0'
                     }`}
       >
-        <div className="bg-sky-blue p-5 flex items-end justify-between">
-          <h1 className="text-3xl text-white font-bold italic">nevmo</h1>
+        <div className="bg-sky-blue px-10 py-5 flex items-end justify-between">
+          <h1
+            className="text-3xl text-white font-bold italic cursor-pointer"
+            onClick={() => (window.location = '/dashboard')}
+          >
+            nevmo
+          </h1>
           <IoMdClose
             className="lg:hidden h-6 w-6 text-white"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           />
         </div>
-        <nav className="flex flex-col p-5 space-y-4">
+        <nav className="flex flex-col px-10 py-5 space-y-4">
           <Link to="/dashboard" className="hover:text-sky-blue">
             Dashboard
           </Link>
