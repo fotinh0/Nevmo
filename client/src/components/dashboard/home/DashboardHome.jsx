@@ -1,5 +1,6 @@
 import { Link, useOutletContext } from 'react-router-dom';
 import Transaction from '../shared/Transaction';
+import ActionButton from '../shared/ActionButton';
 
 const DashboardHome = () => {
   const { userData } = useOutletContext();
@@ -19,15 +20,20 @@ const DashboardHome = () => {
 
       {/* Action Buttons */}
       <div className="flex gap-4">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Pay Others
-        </button>
-        <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-          Transfer Money
-        </button>
-        <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
-          Deposit Money
-        </button>
+        <ActionButton label="Pay" url="/dashboard/pay" />
+        <ActionButton label="Request" url="/dashboard/pay" />
+        <ActionButton
+          label="Transfer"
+          url="/dashboard/transfer"
+          bgColor="bg-green-500"
+          hoverBgColor="bg-green-600"
+        />
+        <ActionButton
+          label="Deposit"
+          url="/dashboard/deposit"
+          bgColor="bg-yellow-500"
+          hoverBgColor="bg-yellow-600"
+        />
       </div>
 
       {/* Recent Transactions */}
@@ -38,8 +44,13 @@ const DashboardHome = () => {
             <Transaction key={index} transaction={transaction} />
           ))}
         </div>
-        <div className="text-center hover:text-sky-blue">
-          <Link to="/dashboard/transactions">View more</Link>
+        <div className="text-center">
+          <ActionButton
+            label="View more"
+            url="/dashboard/transactions"
+            bgColor="bg-gray-400"
+            hoverBgColor="bg-gray-500"
+          />
         </div>
       </div>
     </div>
