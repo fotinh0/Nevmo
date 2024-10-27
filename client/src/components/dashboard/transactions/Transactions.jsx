@@ -1,4 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
+import Transaction from '../shared/Transaction';
 
 const Transactions = () => {
   const { userData } = useOutletContext();
@@ -8,21 +9,7 @@ const Transactions = () => {
       {/* Transactions Section */}
       <div className="space-y-4">
         {userData.transactions.map((transaction, index) => (
-          <div
-            key={index}
-            className="bg-white p-4 rounded-lg shadow-md flex justify-between items-center"
-          >
-            <div>
-              <p className="font-medium">{transaction.type}</p>
-              <p className="text-sm text-gray-500">
-                {transaction.from} → {transaction.to}
-              </p>
-              <p className="text-sm text-gray-500">Date: {transaction.date}</p>
-            </div>
-            <p className="text-lg font-semibold text-blue-500">
-              ${transaction.amount}
-            </p>
-          </div>
+          <Transaction key={index} transaction={transaction} />
         ))}
       </div>
     </>
