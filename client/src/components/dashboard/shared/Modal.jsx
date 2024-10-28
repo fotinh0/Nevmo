@@ -2,10 +2,11 @@ const Modal = ({
   isOpen,
   title,
   children,
-  label,
+  buttonLabel,
   onClose,
   handleSubmit,
-  className,
+  contentClassName,
+  buttonClassName,
 }) => {
   if (!isOpen) return null;
 
@@ -22,13 +23,15 @@ const Modal = ({
           </button>
         </div>
         <form onSubmit={handleSubmit} method="post">
-          <div className={`modal-content ${className}`}>{children}</div>
-          <div className="mt-4 text-center">
+          <div className={`modal-content ${contentClassName || ''}`}>
+            {children}
+          </div>
+          <div className="mt-8 text-center">
             <button
-              className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+              className={`py-2 px-4 rounded-full bg-blue-500 text-white hover:bg-blue-600 ${buttonClassName}`}
               type="submit"
             >
-              {label}
+              {buttonLabel}
             </button>
           </div>
         </form>

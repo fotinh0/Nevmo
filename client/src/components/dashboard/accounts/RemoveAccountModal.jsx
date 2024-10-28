@@ -1,4 +1,3 @@
-import React from 'react';
 import Modal from '../shared/Modal';
 
 const RemoveAccountModal = ({ isModalOpen, setIsModalOpen, account }) => {
@@ -10,16 +9,18 @@ const RemoveAccountModal = ({ isModalOpen, setIsModalOpen, account }) => {
     setIsModalOpen(false);
     console.log('Removing account ' + account.id);
   };
+
   return (
     <Modal
       isOpen={isModalOpen}
       title="Are you sure?"
-      label="Remove account"
+      buttonLabel="Remove account"
+      buttonClassName="bg-red-500 hover:bg-red-600"
       onClose={closeModal}
       handleSubmit={handleSubmit}
     >
       <p>You are removing the following account: </p>
-      <p>{account.name}</p>
+      <p className="font-bold">{account.name}</p>
     </Modal>
   );
 };

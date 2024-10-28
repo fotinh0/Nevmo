@@ -35,10 +35,10 @@ const CreateAccountModal = ({ isModalOpen, setIsModalOpen }) => {
     <Modal
       isOpen={isModalOpen}
       title="Add new account"
-      label="Add account"
+      buttonLabel="Add account"
       onClose={closeModal}
       handleSubmit={handleSubmit}
-      className="flex flex-col gap-4"
+      contentClassName="flex flex-col gap-4"
     >
       <input
         type="text"
