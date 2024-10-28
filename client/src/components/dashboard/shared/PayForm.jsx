@@ -35,7 +35,7 @@ const PayForm = () => {
       className="space-y-4 p-4 bg-white shadow-md rounded-lg text-center max-w-3xl mx-auto"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-lg font-semibold">Pay & Request</h3>
+      <h1 className="text-2xl font-semibold">Pay & Request</h1>
       <input
         type="email"
         name="recipientEmail"
@@ -62,20 +62,22 @@ const PayForm = () => {
         className="w-full p-2 border rounded-lg"
         required
       />
-      <button
-        type="submit"
-        name="pay"
-        className="mx-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200 min-w-32"
-      >
-        Pay
-      </button>
-      <button
-        type="submit"
-        name="request"
-        className="mx-2 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200 min-w-32"
-      >
-        Request
-      </button>
+      <div className="flex gap-8 justify-center flex-wrap">
+        <button
+          type="submit"
+          name="pay"
+          className="bg-blue-500 text-white py-2 px-4 w-full rounded-full hover:bg-blue-600 transition-colors duration-200 sm:w-32"
+        >
+          Pay
+        </button>
+        <button
+          type="submit"
+          name="request"
+          className="bg-blue-500 text-white py-2 px-4 w-full rounded-full hover:bg-blue-600 transition-colors duration-200 sm:w-32"
+        >
+          Request
+        </button>
+      </div>
     </form>
   );
 };

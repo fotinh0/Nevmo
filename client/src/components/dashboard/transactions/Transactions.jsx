@@ -6,9 +6,8 @@ const Transactions = () => {
   const { userData } = useOutletContext();
   return (
     <>
-      <div className="flex gap-4 mb-8">
-        <ActionButton label="Pay" url="/dashboard/pay" />
-        <ActionButton label="Request" url="/dashboard/pay" />
+      <div className="flex flex-wrap gap-8 mb-8 justify-center sm:justify-start sm:gap-4">
+        <ActionButton label="Pay & Request" url="/dashboard/pay" />
         <ActionButton
           label="Transfer"
           url="/dashboard/transfer"
@@ -23,14 +22,16 @@ const Transactions = () => {
         />
       </div>
       {/* Transactions Section */}
-      <h2 className="text-2xl font-bold mb-4">Transaction History</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center sm:text-left">
+        Transaction History
+      </h2>
       <div className="space-y-4">
         {userData.transactions.length ? (
           userData.transactions.map((transaction, index) => (
             <Transaction key={index} transaction={transaction} />
           ))
         ) : (
-          <p>No transactions history.</p>
+          <p className="text-center sm:text-left">No transactions history.</p>
         )}
       </div>
     </>

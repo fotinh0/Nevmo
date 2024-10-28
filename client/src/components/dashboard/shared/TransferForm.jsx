@@ -24,7 +24,7 @@ const TransferForm = () => {
       className="space-y-4 p-4 bg-white shadow-md rounded-lg max-w-3xl mx-auto text-center"
       onSubmit={handleSubmit}
     >
-      <h3 className="text-lg font-semibold">Transfer Money</h3>
+      <h1 className="text-2xl font-semibold">Transfer Money</h1>
       <select
         name="fromAccount"
         onChange={handleChange}
@@ -66,7 +66,7 @@ const TransferForm = () => {
       />
       <button
         type="submit"
-        className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200"
+        className="bg-blue-500 text-white py-2 px-4 w-full sm:w-32 rounded-lg hover:bg-blue-600 transition-colors duration-200"
       >
         Transfer
       </button>

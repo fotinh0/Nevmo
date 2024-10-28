@@ -19,9 +19,8 @@ const DashboardHome = () => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex gap-4">
-        <ActionButton label="Pay" url="/dashboard/pay" />
-        <ActionButton label="Request" url="/dashboard/pay" />
+      <div className="flex flex-wrap gap-8 sm:flex-nowrap sm:gap-4">
+        <ActionButton label="Pay & Request" url="/dashboard/pay" />
         <ActionButton
           label="Transfer"
           url="/dashboard/transfer"
