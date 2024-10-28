@@ -15,3 +15,23 @@ body {
 a {
   cursor: pointer;
 }
+
+input,
+textarea {
+  border: 1px solid #888c94;
+  border-radius: 0.25rem;
+  height: 3.5rem;
+  padding: 0.375rem 0.625rem;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: #0074de;
+}
+
+input:focus-visible::placeholder,
+textarea:focus-visible::placeholder,
+select:focus-visible::placeholder {
+  color: #0074de;
+}
