@@ -66,7 +66,7 @@ const Dashboard = () => {
     <div className="flex h-full">
       <Sidebar />
 
-      <main className="flex-1 px-10 my-20">
+      <main className="flex-1 px-10 pb-10 mt-20">
         <Outlet context={{ userData }} />
       </main>
     </div>
