@@ -40,18 +40,27 @@ const DashboardHome = () => {
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
         <div className="space-y-4 mb-8">
-          {userData.transactions.slice(0, 4).map((transaction, index) => (
-            <Transaction key={index} transaction={transaction} />
-          ))}
+          {userData.transactions.length ? (
+            userData.transactions
+              .slice(0, 4)
+              .map((transaction, index) => (
+                <Transaction key={index} transaction={transaction} />
+              ))
+          ) : (
+            <p>No recent transactions.</p>
+          )}
         </div>
-        <div className="text-center">
-          <ActionButton
-            label="View more"
-            url="/dashboard/transactions"
-            bgColor="bg-gray-400"
-            hoverBgColor="bg-gray-500"
-          />
-        </div>
+
+        {userData.transactions.length && (
+          <div className="text-center">
+            <ActionButton
+              label="View more"
+              url="/dashboard/transactions"
+              bgColor="bg-gray-400"
+              hoverBgColor="bg-gray-500"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
