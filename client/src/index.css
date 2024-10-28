@@ -17,7 +17,8 @@ a {
 }
 
 input,
-textarea {
+textarea,
+select {
   border: 1px solid #888c94;
   border-radius: 0.25rem;
   height: 3.5rem;

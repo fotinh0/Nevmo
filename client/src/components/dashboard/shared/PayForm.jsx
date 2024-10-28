@@ -11,9 +11,23 @@ const PayForm = () => {
     setPayData({ ...payData, [e.target.name]: e.target.value });
   };
 
+  const handleRequest = () => {
+    // Handle request
+    // TODO: handle payment function
+    console.log('Requesting money: ', payData);
+  };
+
+  const handlePay = () => {
+    // Handle payment
+    // TODO: handle request function
+    console.log('Paying: ', payData);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Paying:', payData);
+    // TODO: handle action + validation
+    const action = e.nativeEvent.submitter.name;
+    action === 'pay' ? handlePay() : handleRequest();
   };
 
   return (

@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 const TransferForm = () => {
+  const { userData } = useOutletContext();
   const [transferData, setTransferData] = useState({
     fromAccount: '',
     toAccount: '',
@@ -13,6 +15,7 @@ const TransferForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // TODO: handle transfer + validation
     console.log('Transferring:', transferData);
   };
 
@@ -28,7 +31,14 @@ const TransferForm = () => {
         className="w-full p-2 border rounded-lg"
         required
       >
-        <option value="">Select From Account</option>
+        <option value="">Select Account</option>
+        {userData.accounts.map((account, index) => {
+          return (
+            <option key={index} value={account.id}>
+              {account.name}
+            </option>
+          );
+        })}
       </select>
       <select
         name="toAccount"
@@ -36,7 +46,14 @@ const TransferForm = () => {
         className="w-full p-2 border rounded-lg"
         required
       >
-        <option value="">Select To Account</option>
+        <option value="">Select Account</option>
+        {userData.accounts.map((account, index) => {
+          return (
+            <option key={index} value={account.id}>
+              {account.name}
+            </option>
+          );
+        })}
       </select>
       <input
         type="number"

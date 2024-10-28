@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 const DepositForm = () => {
+  const { userData } = useOutletContext();
   const [depositData, setDepositData] = useState({ amount: '' });
 
   const handleChange = (e) => {
@@ -9,6 +11,7 @@ const DepositForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Handle deposit + validation
     console.log('Depositing:', depositData);
   };
 
@@ -18,6 +21,21 @@ const DepositForm = () => {
       onSubmit={handleSubmit}
     >
       <h3 className="text-lg font-semibold">Deposit Money</h3>
+      <select
+        name="fromAccount"
+        onChange={handleChange}
+        className="w-full p-2 border rounded-lg"
+        required
+      >
+        <option value="">Select Account</option>
+        {userData.accounts.map((account, index) => {
+          return (
+            <option key={index} value={account.id}>
+              {account.name}
+            </option>
+          );
+        })}
+      </select>
       <input
         type="number"
         name="amount"
