@@ -39,13 +39,13 @@ The project is primarily focused on the UI of the application.
 ### Running Backend Server
 
 1. Navigate to `/server` folder.
-2. Install dependencies using the following command: `npm install`.
-3. Start server using the following command: `npm start`.
+2. Install dependencies: `npm install`.
+3. Start server using: `npm start`.
 4. The backend server will run on http://localhost:5000.
 
 ### Running Frontend Client
 
 1. Navigate to `/client` folder.
-2. Install dependencies using the following command: `npm install`.
-3. Start client by using the following command: `npm run dev`.
+2. Install dependencies using: `npm install`.
+3. Start client using: `npm run dev`.
 4. The frontend client will run on http://localhost:5173.
